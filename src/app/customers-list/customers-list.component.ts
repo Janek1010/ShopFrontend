@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomersServiceService } from '../customers-service.service';
+import { CustomersServiceService } from './customers-service.service';
+import { Customer } from './customer.model';
 
 @Component({
   selector: 'app-customers-list',
@@ -7,7 +8,7 @@ import { CustomersServiceService } from '../customers-service.service';
   styleUrls: ['./customers-list.component.css']
 })
 export class CustomersListComponent implements OnInit {
-  customers: any[] = [];
+  customers: Customer[] = [];
 
   constructor(private customersService: CustomersServiceService) {}
 
@@ -17,8 +18,23 @@ export class CustomersListComponent implements OnInit {
 
   loadCustomers(): void {
     this.customersService.getCustomers().subscribe((data: any) => {
-      this.customers = data;
+      this.customers = data.customers.map((customer: any) => {
+        return new Customer(
+          customer.id,
+          customer.pesel,
+          customer.name,
+          customer.surname,
+          customer.age
+        );
+      });
       console.log('Otrzymane dane:', this.customers);
     });
   }
+
+  deleteCustomer(id: string): void {
+    this.customersService.deleteCustomer(id).subscribe(() => {
+      this.loadCustomers();
+    });
+  }
+
 }

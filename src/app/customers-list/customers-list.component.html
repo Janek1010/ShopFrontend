@@ -1,11 +1,11 @@
 <!-- category-list.component.html -->
 
 <div>
-  <h2>List of Categories</h2>
+  <h2>Lista Klientow</h2>
   <ul>
     <li *ngFor="let customer of customers">
-      {{ customer}}
-<!--      <button (click)="removeCategory(category.id)">Remove</button>-->
+      {{ customer.name +' ' + customer.surname}}
+      <button (click)="deleteCustomer(customer.id)">Remove</button>
     </li>
   </ul>
 </div>
