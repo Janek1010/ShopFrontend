@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { Customer } from '../model/customer.model';
+import { Customer } from '../../model/customer.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CustomersServiceService } from '../customers-list/customers-service.service';  // Zastąp to rzeczywistą ścieżką
+import { CustomersServiceService } from '../../service/customers-service.service';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-customer-add-form',
   templateUrl: './customer-add-form.component.html',
@@ -10,7 +13,7 @@ import { CustomersServiceService } from '../customers-list/customers-service.ser
 export class CustomerAddFormComponent {
   customerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private customerService: CustomersServiceService) {
+  constructor(private fb: FormBuilder,private router: Router, private customerService: CustomersServiceService) {
     this.customerForm = this.fb.group({
       pesel: ['', [Validators.required]],
       name: ['', [Validators.required]],
@@ -29,7 +32,7 @@ export class CustomerAddFormComponent {
       };
 
       this.customerService.addOrUpdateCustomer(newCustomer).subscribe(response => {
-        console.log('Klient dodany pomyślnie', response);
+        this.router.navigate(['/customers']);
       });
     }
   }
