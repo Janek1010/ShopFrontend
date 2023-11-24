@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="customer">
   <h2>Customer Information</h2>
 
   <div>
@@ -26,3 +26,27 @@
     <span>{{ customer.age }}</span>
   </div>
 </div>
+
+<div>
+  <h2>Lista Zamówień</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Nazwa </th>
+      <th>Ilość </th>
+      <th>Usun </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.productName }}</td>
+      <td>{{ order.quantity }}</td>
+      <td>
+        <button (click)="deleteOrder(order.id)">Usuń</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br/>
+</div>
+

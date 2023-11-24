@@ -30,13 +30,6 @@ export class CustomersServiceService {
   }
   deleteCustomer(id: string): Observable<any> {
     const url = this.apiByIdUrl.replace('{id}', id);
-
-    // Utwórz obiekt HttpHeaders
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-
-    // Przekaż obiekt HttpHeaders jako parametr do metody delete
-    return this.http.delete(url, { headers });
+    return this.http.delete(url);
   }
 }
