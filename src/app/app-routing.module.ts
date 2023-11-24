@@ -4,11 +4,13 @@ import {CustomersListComponent} from "./customer/view/customers-list/customers-l
 import {CustomerAddFormComponent} from "./customer/view/customer-add-form/customer-add-form.component";
 import {AppComponent} from "./app.component";
 import {CustomerEditComponent} from "./customer/view/customer-edit/customer-edit.component";
+import {CustomerDetailsComponent} from "./customer/view/customer-details/customer-details.component";
 
 const routes: Routes = [
   { path: 'customers', component: CustomersListComponent },
   { path: 'add-customer', component: CustomerAddFormComponent },
   { path: 'customers/:id/edit', component: CustomerEditComponent },
+  { path: 'customers/:id', component: CustomerDetailsComponent },
   { path: '', redirectTo: '', pathMatch: 'full' }, // Domyślna trasa
 ];
 

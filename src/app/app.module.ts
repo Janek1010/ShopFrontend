@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerAddFormComponent } from './customer/view/customer-add-form/customer-add-form.component';
 import { NavComponent } from './component/nav/nav.component';
 import { CustomerEditComponent } from './customer/view/customer-edit/customer-edit.component';
+import { CustomerDetailsComponent } from './customer/view/customer-details/customer-details.component';
 
 @NgModule({
 
@@ -18,6 +19,7 @@ import { CustomerEditComponent } from './customer/view/customer-edit/customer-ed
     CustomerAddFormComponent,
     NavComponent,
     CustomerEditComponent,
+    CustomerDetailsComponent,
   ],
   imports: [
     BrowserModule,
