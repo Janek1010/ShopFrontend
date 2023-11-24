@@ -3,18 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomersListComponent } from './customers-list/customers-list.component';
-
+import { CustomersListComponent } from './customer/customers-list/customers-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomerAddFormComponent } from './customer/customer-add-form/customer-add-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersListComponent,
+    CustomerAddFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [],
