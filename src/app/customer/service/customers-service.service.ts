@@ -16,10 +16,17 @@ export class CustomersServiceService {
   getCustomers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+  getCustomerById(id: string): Observable<Customer> {
+    const url = this.apiByIdUrl.replace('{id}', id);
+    return this.http.get<Customer>(url);
+  }
 
-  addOrUpdateCustomer(customer: Customer): Observable<any> {
+  addCustomer(customer: Customer): Observable<any> {
       customer.id = uuidv4();
       return this.http.put<any>(`${this.apiUrl}/${customer.id}`, customer);
+  }
+  updateCustomer(customer: Customer): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${customer.id}`, customer);
   }
   deleteCustomer(id: string): Observable<any> {
     const url = this.apiByIdUrl.replace('{id}', id);

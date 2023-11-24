@@ -31,7 +31,7 @@ export class CustomerAddFormComponent {
         age: this.customerForm.value.age,
       };
 
-      this.customerService.addOrUpdateCustomer(newCustomer).subscribe(response => {
+      this.customerService.addCustomer(newCustomer).subscribe(response => {
         this.router.navigate(['/customers']);
       });
     }

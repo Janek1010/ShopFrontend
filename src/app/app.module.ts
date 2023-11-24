@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerAddFormComponent } from './customer/view/customer-add-form/customer-add-form.component';
 import { NavComponent } from './component/nav/nav.component';
+import { CustomerEditComponent } from './customer/view/customer-edit/customer-edit.component';
 
 @NgModule({
 
@@ -16,6 +17,7 @@ import { NavComponent } from './component/nav/nav.component';
     CustomersListComponent,
     CustomerAddFormComponent,
     NavComponent,
+    CustomerEditComponent,
   ],
   imports: [
     BrowserModule,

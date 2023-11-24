@@ -1,12 +1,28 @@
-<!-- category-list.component.html -->
-
 <div>
-  <h2>Lista Klientow</h2>
-  <ul>
-    <li *ngFor="let customer of customers">
-      {{ customer.name +' ' + customer.surname}}
-      <button (click)="deleteCustomer(customer.id)">Remove</button>
-    </li>
-  </ul>
-  <button routerLink="/add-customer">Dodaj nowego klienta</button>
+  <h2>Lista Klientów</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.surname }}</td>
+      <td>
+        <button (click)="deleteCustomer(customer.id)">Usuń</button>
+      </td>
+      <td>
+        <button [routerLink]="['/customers', customer.id, 'edit']">Edytuj</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br/>
+  <div class="button-container">
+    <button routerLink="/add-customer">Dodaj nowego klienta</button>
+  </div>
 </div>

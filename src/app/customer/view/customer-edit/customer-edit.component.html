@@ -1,11 +1,15 @@
-<!-- add-customer.component.html -->
-<div>
-  <h2>Dodaj nowego klienta</h2>
-  <form [formGroup]="customerForm" (ngSubmit)="addCustomer()">
+<!-- customer-edit.component.html -->
+<div *ngIf="customerForm">
+  <h2>Edycja Klienta</h2>
+  <form [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
     <table>
       <tr>
+        <td><label for="id">ID:</label></td>
+        <td><input type="text" id="id" formControlName="id" readonly /></td>
+      </tr>
+      <tr>
         <td><label for="pesel">PESEL:</label></td>
-        <td><input type="text" id="pesel" formControlName="pesel" /></td>
+        <td><input type="text" id="pesel" formControlName="pesel" readonly /></td>
       </tr>
       <tr>
         <td><label for="name">Imię:</label></td>
@@ -21,6 +25,6 @@
       </tr>
     </table>
     <br /><br />
-    <button type="submit">Dodaj klienta</button>
+    <button type="submit">Zapisz zmiany</button>
   </form>
 </div>
