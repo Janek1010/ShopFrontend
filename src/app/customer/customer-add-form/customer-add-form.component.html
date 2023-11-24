@@ -1,0 +1,21 @@
+<!-- add-customer.component.html -->
+<div>
+  <h2>Dodaj nowego klienta</h2>
+  <form [formGroup]="customerForm" (ngSubmit)="addCustomer()">
+    <label for="pesel">PESEL:</label>
+    <input type="text" id="pesel" formControlName="pesel" />
+    <br /><br />
+    <label for="name">Imię:</label>
+    <input type="text" id="name" formControlName="name" />
+    <br /><br />
+    <label for="surname">Nazwisko:</label>
+    <input type="text" id="surname" formControlName="surname" />
+    <br /><br />
+
+    <label for="age">Wiek:</label>
+    <input type="number" id="age" formControlName="age" />
+    <br /><br />
+    <br /><br />
+    <button type="submit">Dodaj klienta</button>
+  </form>
+</div>
