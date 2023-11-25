@@ -1,18 +1,28 @@
-
-<div>
-  <h2>Dodaj nowe zamowienie</h2>
+<div class="container mt-4">
+  <h2>Dodaj nowe zamówienie</h2>
   <form [formGroup]="orderForm" (ngSubmit)="addOrder()">
-    <table>
-      <tr>
-        <td><label for="productName">Nazwa Produktu:</label></td>
-        <td><input type="text" id="productName" formControlName="productName" /></td>
-      </tr>
-      <tr>
-        <td><label for="quantity">Ilosc:</label></td>
-        <td><input type="text" id="quantity" formControlName="quantity" /></td>
-      </tr>
-    </table>
-    <br /><br />
-    <button type="submit">Dodaj zamowienie</button>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="productName">Nazwa Produktu:</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text" id="productName" formControlName="productName" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <label for="quantity">Ilość:</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text" id="quantity" formControlName="quantity" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col">
+        <button type="submit" class="btn btn-success">Dodaj zamówienie</button>
+      </div>
+    </div>
   </form>
 </div>

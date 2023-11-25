@@ -1,6 +1,6 @@
-<div>
+<div class="container mt-4">
   <h2>Lista Klientów</h2>
-  <table>
+  <table class="table">
     <thead>
     <tr>
       <th>Imię</th>
@@ -13,19 +13,16 @@
       <td>{{ customer.name }}</td>
       <td>{{ customer.surname }}</td>
       <td>
-        <button (click)="deleteCustomer(customer.id)">Usuń</button>
-      </td>
-      <td>
-        <button [routerLink]="['/customers', customer.id, 'edit']">Edytuj</button>
-      </td>
-      <td>
-        <button [routerLink]="['/customers', customer.id]">Szczegoly</button>
+        <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Usuń</button>
+        <span class="mx-2"></span> <!-- Dodany większy odstęp -->
+        <button class="btn btn-primary" [routerLink]="['/customers', customer.id, 'edit']">Edytuj</button>
+        <span class="mx-2"></span> <!-- Dodany większy odstęp -->
+        <button class="btn btn-info" [routerLink]="['/customers', customer.id]">Szczegóły</button>
       </td>
     </tr>
     </tbody>
   </table>
-  <br/>
-  <div class="button-container">
-    <button routerLink="/add-customer">Dodaj nowego klienta</button>
+  <div class="button-container mt-3">
+    <button class="btn btn-success" routerLink="/add-customer">Dodaj nowego klienta</button>
   </div>
 </div>

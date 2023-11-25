@@ -28,7 +28,7 @@ export class EditOrderFormComponent {
       this.order = order;
 
       this.orderForm = this.fb.group({
-        id: [this.order ? this.order.id : '', Validators.required],
+        orderId: [this.order ? this.orderId : '', Validators.required],
         productName: [this.order ? this.order.productName : '', Validators.required],
         quantity: [this.order ? this.order.quantity : '', Validators.required],
         customerId: [this.order ? this.order.customer : '', Validators.required],
@@ -39,7 +39,7 @@ export class EditOrderFormComponent {
   updateOrder() {
     if (this.orderForm.valid) {
       const updatedOrder: Order = {
-        id: this.orderForm.value.id,
+        id: this.orderId,
         productName: this.orderForm.value.productName,
         quantity: this.orderForm.value.quantity,
         customer: this.orderForm.value.customerId,

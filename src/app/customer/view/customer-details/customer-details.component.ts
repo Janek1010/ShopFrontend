@@ -45,4 +45,6 @@ export class CustomerDetailsComponent  implements OnInit {
             this.getOrdersByCustomerId(this.customerId!);
         });
     }
+
+  protected readonly Customer = Customer;
 }

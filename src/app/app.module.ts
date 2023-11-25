@@ -13,6 +13,7 @@ import { CustomerDetailsComponent } from './customer/view/customer-details/custo
 import { AddOrderFormComponent } from './order/view/add-order-form/add-order-form.component';
 import { EditOrderFormComponent } from './order/view/edit-order-form/edit-order-form.component';
 import { OrderDetailsComponent } from './order/view/order-details/order-details.component';
+import { NgbModule  } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
 
@@ -33,6 +34,7 @@ import { OrderDetailsComponent } from './order/view/order-details/order-details.
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
