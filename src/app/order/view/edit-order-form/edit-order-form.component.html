@@ -1,0 +1,26 @@
+<!-- customer-edit.component.html -->
+<div *ngIf="orderForm">
+  <h2>Edycja Klienta</h2>
+  <form [formGroup]="orderForm" (ngSubmit)="updateOrder()">
+    <table>
+      <tr>
+        <td><label for="id">ID:</label></td>
+        <td><input type="text" id="id" formControlName="id" readonly /></td>
+      </tr>
+      <tr>
+        <td><label for="customerId">ID klienta:</label></td>
+        <td><input type="text" id="customerId" formControlName="customerId" readonly /></td>
+      </tr>
+      <tr>
+        <td><label for="productName">Nazwa produktu:</label></td>
+        <td><input type="text" id="productName" formControlName="productName" /></td>
+      </tr>
+      <tr>
+        <td><label for="quantity">Ilosc:</label></td>
+        <td><input type="text" id="quantity" formControlName="quantity" /></td>
+      </tr>
+    </table>
+    <br /><br />
+    <button type="submit">Zapisz zmiany</button>
+  </form>
+</div>

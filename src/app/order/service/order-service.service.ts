@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Order} from "../model/order.model";
 import {v4 as uuidv4} from "uuid";
+import {Customer} from "../../customer/model/customer.model";
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,13 @@ export class OrderServiceService {
   addOrder(order: Order): Observable<any> {
     order.id = uuidv4();
     return this.http.put<any>(`${this.apiUrl}/${order.id}`, order);
+  }
+
+  updateOrder(order: Order): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${order.id}`, order);
+  }
+  getOrderById(id: string): Observable<Order> {
+    const url = this.apiByIdUrl.replace('{id}', id);
+    return this.http.get<Order>(url);
   }
 }

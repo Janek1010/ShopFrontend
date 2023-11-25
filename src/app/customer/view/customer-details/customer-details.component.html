@@ -45,6 +45,9 @@
       <td>
         <button (click)="deleteOrder(order.id)">Usuń</button>
       </td>
+      <td>
+        <button [routerLink]="['/orders', order.id, 'edit']">Edytuj</button>
+      </td>
     </tr>
     </tbody>
   </table>
