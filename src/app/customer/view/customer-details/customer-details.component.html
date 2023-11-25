@@ -29,12 +29,13 @@
 
 <div>
   <h2>Lista Zamówień</h2>
+  <p><button [routerLink]="['/customers', customerId, 'add-order']">Dodaj nowe zamowienie</button></p>
   <table>
     <thead>
     <tr>
-      <th>Nazwa </th>
-      <th>Ilość </th>
-      <th>Usun </th>
+      <th>Nazwa Produktu</th>
+      <th>Ilość</th>
+      <th>Usun</th>
     </tr>
     </thead>
     <tbody>

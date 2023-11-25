@@ -1,0 +1,18 @@
+
+<div>
+  <h2>Dodaj nowe zamowienie</h2>
+  <form [formGroup]="orderForm" (ngSubmit)="addOrder()">
+    <table>
+      <tr>
+        <td><label for="productName">Nazwa Produktu:</label></td>
+        <td><input type="text" id="productName" formControlName="productName" /></td>
+      </tr>
+      <tr>
+        <td><label for="quantity">Ilosc:</label></td>
+        <td><input type="text" id="quantity" formControlName="quantity" /></td>
+      </tr>
+    </table>
+    <br /><br />
+    <button type="submit">Dodaj zamowienie</button>
+  </form>
+</div>

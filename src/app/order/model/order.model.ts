@@ -2,12 +2,12 @@ export class Order {
   id: string;
   productName: string;
   quantity: number;
-  customerId: string;
+  customer: string;
 
   constructor(id: string, productName: string, quantity: number, customerId: string) {
     this.id = id;
     this.productName = productName;
     this.quantity = quantity;
-    this.customerId = customerId;
+    this.customer = customerId;
   }
 }
