@@ -12,6 +12,7 @@ import { CustomerEditComponent } from './customer/view/customer-edit/customer-ed
 import { CustomerDetailsComponent } from './customer/view/customer-details/customer-details.component';
 import { AddOrderFormComponent } from './order/view/add-order-form/add-order-form.component';
 import { EditOrderFormComponent } from './order/view/edit-order-form/edit-order-form.component';
+import { OrderDetailsComponent } from './order/view/order-details/order-details.component';
 
 @NgModule({
 
@@ -24,6 +25,7 @@ import { EditOrderFormComponent } from './order/view/edit-order-form/edit-order-
     CustomerDetailsComponent,
     AddOrderFormComponent,
     EditOrderFormComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     BrowserModule,

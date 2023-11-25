@@ -7,6 +7,7 @@ import {CustomerEditComponent} from "./customer/view/customer-edit/customer-edit
 import {CustomerDetailsComponent} from "./customer/view/customer-details/customer-details.component";
 import {AddOrderFormComponent} from "./order/view/add-order-form/add-order-form.component";
 import {EditOrderFormComponent} from "./order/view/edit-order-form/edit-order-form.component";
+import {OrderDetailsComponent} from "./order/view/order-details/order-details.component";
 
 const routes: Routes = [
   { path: 'customers', component: CustomersListComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'customers/:id/edit', component: CustomerEditComponent },
   { path: 'orders/:id/edit', component: EditOrderFormComponent },
   { path: 'customers/:id', component: CustomerDetailsComponent },
+  { path: 'orders/:id', component: OrderDetailsComponent },
   { path: 'customers/:id/add-order', component: AddOrderFormComponent },
   { path: '', redirectTo: '', pathMatch: 'full' }, // Domyślna trasa
 ];

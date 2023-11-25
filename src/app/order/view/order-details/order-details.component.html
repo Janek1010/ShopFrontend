@@ -1,0 +1,24 @@
+<div *ngIf="order">
+  <h2>Customer Information</h2>
+
+  <div>
+    <span>ID:</span>
+    <span>{{ order.id }}</span>
+  </div>
+
+  <div>
+    <span>Nazwa Produktu:</span>
+    <span>{{ order.productName }}</span>
+  </div>
+
+  <div>
+    <span>Ilosc:</span>
+    <span>{{ order.quantity }}</span>
+  </div>
+
+  <div>
+    <span>Klient:</span>
+    <span>{{ order.customer }}</span>
+  </div>
+
+</div>
